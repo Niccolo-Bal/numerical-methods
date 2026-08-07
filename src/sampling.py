@@ -14,11 +14,6 @@ class Sampling:
         self._z_cache = {}
         self._normalized_cache = {}
 
-        # Temp where k is the kth - 1 iteration (0-indexed)
-        self.t = lambda k: (
-            10 / (np.log(k + 2))
-        )
-
 
     # Returns float with normal distribution
     def norm(self, mu: float = 0, std = 1) -> float:
