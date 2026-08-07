@@ -1,7 +1,7 @@
 ## Numerical Methods
 
-The following is a collection of numerical and statisticl method implimentations in Python (/src) and 
-Jupyter notebooks with writeups/benchmarks/visualizations for each category of numerical
+The following is a collection of numerical and statistical method implimentations in Python (/src) and 
+Jupyter notebooks (/notebooks) with writeups/benchmarks/visualizations for each category of numerical
 methods, under the same name as their underlying source files.
 
 Below is a list of each file/notebook and what they go over:
