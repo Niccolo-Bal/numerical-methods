@@ -1,7 +1,7 @@
 
 import numpy as np
 from collections.abc import Callable
-from randomness import LCG
+from pseudorandom_numbers import LCG
 
 lcg = LCG(0.1)
 

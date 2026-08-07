@@ -7,12 +7,12 @@ methods, under the same name as their underlying source files.
 Below is a list of each file/notebook and what they go over:
 
 * `fixed_point` - Solving fixed point problems of the form $x = g(x)$, and limitations.
-* `integrals_roots` - Various methods for approximating integrals (midpoint, trapazoid TODO: simpsons);
-Newton's method and bisection (binary) method for finding roots.
+* `integrals_roots` - Various methods for approximating integrals (midpoint, trapazoid, 
+Monte Carlo, TODO: Simpson's); Newton's method and bisection (binary) method for finding roots.
 * `interpolations` - Piecewise and polynomial interpolations of functions,
 chebyshev distribution sampling.
 * `minimization` - Gradient descent (shown in 1 and 2 dimensions) and simmulated annealing.
-* `randomness` - Linear congruential generator implementation and limitations. TODO: add Mersenne 
+* `pseudorandom_numbers` - Linear congruential generator implementation and limitations. TODO: add Mersenne 
 Twister + block/stream cipher methods, briefly explain OS/system-based generators.
 * `sampling` - Understanding energy functions, sampling from a distribution using inverse and MCMC 
 methods (and limitations)
