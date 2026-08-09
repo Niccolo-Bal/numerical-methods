@@ -2,7 +2,9 @@
 
 The following is a collection of numerical and statistical method implimentations in Python (/src) and 
 Jupyter notebooks (/notebooks) with writeups/benchmarks/visualizations for each category of numerical
-methods, under the same name as their underlying source files.
+methods, under the same name as their underlying source files. The notebooks have quite a bit of code,
+but it is all for benchmarking/visualizing, all actual implementations are in the source files (though
+most notebooks contain some psuedocode).
 
 Below is a list of each file/notebook and what they go over:
 
