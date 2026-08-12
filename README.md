@@ -21,7 +21,7 @@ methods (and limitations)
 * `sparse_methods` - Implementation of coordinate matricies, Jacobian and Power methods for solving
 linear problems and finding eigenvalues respectively.
 
-My favorites are: sparse_methods and sampling (MCMC + cdf).
+My favorites are: sparse_methods and sampling (MCMC in particular).
 
 Insperation + sources for these implementations and writeups includes but is not limited to:
 
