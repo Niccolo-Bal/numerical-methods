@@ -21,13 +21,13 @@ methods (and limitations)
 * `sparse_methods` - Implementation of coordinate matricies, Jacobian and Power methods for solving
 linear problems and finding eigenvalues respectively.
 
-My favorites are: sparse_methods and sampling (MCMC + cdf).
+My favorites are: sparse_methods and sampling (MCMC in particular).
 
 Insperation + sources for these implementations and writeups includes but is not limited to:
 
 Numerical Analysis by Timothy Sauer ([pdf](https://eclass.aueb.gr/modules/document/file.php/MISC249/Sauer%20-%20Numerical%20Analysis%202e.pdf)) \
 A Student's Guide to Baysian Statistics by Ben Labert ([pdf](https://sites.math.rutgers.edu/~zeilberg/EM20/Lambert.pdf)) ([videos](https://www.youtube.com/playlist?list=PLwJRxp3blEvZ8AKMXOy0fc0cqT61GsKCG)) (current) \
-[3Blue1Brown](https://www.youtube.com/@3blue1brown) on YouTube \
 [StudySession](https://www.youtube.com/@StudySessionYT) on YouTube \
 [SISL](https://www.youtube.com/@SISLaboratory) on YouTube \
+[3Blue1Brown](https://www.youtube.com/@3blue1brown) on YouTube \
 [Claude](claude.ai) by Anthropic
