@@ -21,24 +21,24 @@ class Sampling:
 
     # MCMC sample given a dataset, not using the first 20 values to remove some starting bias, 
     # but, especially for functions not centered near x_0, still holds predictable bias for small n
-    def mcmc_sample(self, energy: Callable[[float], float], n: int = 10**3, thining_factor: int = 1,
+    def mcmc_sample(self, energy: Callable[[float], float], n: int = 10**3, m = 20, thining_factor: int = 1,
                      x_0: float = 0.0,) -> np.ndarray[float]:
 
         if thining_factor < 1:
-            raise ValueError("thining value must be a positive value")
+            raise ValueError("thining must be a positive integer")
 
         x = x_0
         count = 0
         samples = np.zeros(n)
 
-        for k in range(n * thining_factor + 20):
+        for k in range(n * thining_factor + m):
             proposed = x + self.norm()
             
             prob = np.exp((energy(x) - energy(proposed)))
 
             if self.rand.random() < prob:
                 x = proposed
-            if k >= 20 and k % thining_factor == 0:
+            if k >= m and k % thining_factor == 0:
                 # NOTE: writeup says to add the point only if the new one is accepted
                 # but this seems to skew the data and to my understanding is not how MCMC works
                 samples[count] = x
