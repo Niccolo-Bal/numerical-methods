@@ -108,9 +108,6 @@ class Sampling:
     def approx_cdf_samp(self, n: int, cdf: np.ndarray[tuple[int, int], np.dtype[np.float64]]
                         ) -> np.ndarray[np.dtype[np.float64]]:
 
-        start, stop = cdf[0][0], cdf[0][-1]
-        step = (stop - start) / len(cdf[0])
-
         samples = np.zeros(n)
         for i in range(n):
             samples[i] = cdf[0][self._binary_search(cdf[1], self.rand.random())]
