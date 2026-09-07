@@ -8,6 +8,8 @@ most notebooks contain some psuedocode).
 
 Below is a list of each file/notebook and what they go over:
 
+### Methods
+
 * `fixed_point` - Solving fixed point problems of the form $x = g(x)$, and limitations.
 * `integrals_roots` - Various methods for approximating integrals (midpoint, trapazoid, 
 Monte Carlo, TODO: Simpson's); Newton's method and bisection (binary) method for finding roots.
@@ -21,12 +23,16 @@ methods (and limitations)
 * `sparse_methods` - Implementation of coordinate matricies, Jacobian and Power methods for solving
 linear problems and finding eigenvalues respectively.
 
+<br>
+
 My favorites are: sparse_methods and sampling (MCMC in particular).
+
+Requirements for each are listed in their respective folders
 
 Insperation + sources for these implementations and writeups includes but is not limited to:
 
 Numerical Analysis by Timothy Sauer ([pdf](https://eclass.aueb.gr/modules/document/file.php/MISC249/Sauer%20-%20Numerical%20Analysis%202e.pdf)) \
-A Student's Guide to Baysian Statistics by Ben Labert ([pdf](https://sites.math.rutgers.edu/~zeilberg/EM20/Lambert.pdf)) ([videos](https://www.youtube.com/playlist?list=PLwJRxp3blEvZ8AKMXOy0fc0cqT61GsKCG)) (current) \
+A Student's Guide to Baysian Statistics by Ben Labert ([pdf](https://sites.math.rutgers.edu/~zeilberg/EM20/Lambert.pdf)) ([videos](https://www.youtube.com/playlist?list=PLwJRxp3blEvZ8AKMXOy0fc0cqT61GsKCG) \
 [StudySession](https://www.youtube.com/@StudySessionYT) on YouTube \
 [SISL](https://www.youtube.com/@SISLaboratory) on YouTube \
 [3Blue1Brown](https://www.youtube.com/@3blue1brown) on YouTube \
