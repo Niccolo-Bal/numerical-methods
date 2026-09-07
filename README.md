@@ -27,7 +27,8 @@ linear problems and finding eigenvalues respectively.
 
 My favorites are: sparse_methods and sampling (MCMC in particular).
 
-Requirements for each are listed in their respective folders
+Requirements for each are listed in their respective folders but largely only uses `numpy` and
+`matplotlib` for visualizations.
 
 Insperation + sources for these implementations and writeups includes but is not limited to:
 

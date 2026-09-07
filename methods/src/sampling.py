@@ -16,13 +16,13 @@ class Sampling:
 
 
     # Returns float with normal distribution
-    def norm(self, mu: float = 0, std = 1) -> float:
+    def _norm(self, mu: float = 0, std = 1) -> float:
         return self.rand.normal(loc = mu, scale = std)
 
     # MCMC sample given a dataset, not using the first 20 values to remove some starting bias, 
     # but, especially for functions not centered near x_0, still holds predictable bias for small n
-    def mcmc_sample(self, energy: Callable[[float], float], n: int = 10**3, m = 20, thining_factor: int = 1,
-                     x_0: float = 0.0,) -> np.ndarray[float]:
+    def mcmc_sample(self, energy: Callable[[float], float], x_0: float = 0.0, n: int = 10**3, m = 20, 
+                    thining_factor: int = 1, alpha: float = 1.0) -> np.ndarray[float]:
 
         if thining_factor < 1:
             raise ValueError("thining must be a positive integer")
@@ -32,7 +32,7 @@ class Sampling:
         samples = np.zeros(n)
 
         for k in range(n * thining_factor + m):
-            proposed = x + self.norm()
+            proposed = x + (self._norm() * alpha)
             
             prob = np.exp((energy(x) - energy(proposed)))
 
@@ -48,7 +48,7 @@ class Sampling:
 
 
     # Private func to normalize energy function into distribution
-    def normalized(self, energy: Callable[[float], float], bounds: 
+    def _normalized(self, energy: Callable[[float], float], bounds: 
                     tuple[float, float] = (-10, 10)) -> Callable[[float], float]:
         if energy not in self._z_cache:
             self._z_cache[energy] = integrals.midpoint_area(
@@ -87,6 +87,34 @@ class Sampling:
         samples = np.zeros(n)
         for i in range(n):
             samples[i] = self.inverse_cdf(self.rand.random(), distribution, energy)
+        return samples
+
+    def _binary_search(self, arr: np.ndarray[np.dtype[np.float64]], target: float) -> float:
+        lo, hi = 0, len(arr)
+
+        while lo < hi:
+            mid = (lo + hi) // 2
+            cur = arr[mid]
+            if cur > target:
+                hi = mid 
+            else:
+                lo = mid + 1
+
+        return lo
+            
+
+
+    # Assumes inorder linspace cdf func
+    def approx_cdf_samp(self, n: int, cdf: np.ndarray[tuple[int, int], np.dtype[np.float64]]
+                        ) -> np.ndarray[np.dtype[np.float64]]:
+
+        start, stop = cdf[0][0], cdf[0][-1]
+        step = (stop - start) / len(cdf[0])
+
+        samples = np.zeros(n)
+        for i in range(n):
+            samples[i] = cdf[0][self._binary_search(cdf[1], self.rand.random())]
+
         return samples
 
 
